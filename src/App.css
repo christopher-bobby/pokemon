@@ -1,24 +1,38 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
 
-.App-intro {
-  font-size: large;
-}
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+/* Modal Popup
+-------------------------------------*/
+.scroll-locked {
+  overflow: hidden; 
+}
+.overlay-modal {
+  background: rgba(0,0,0,0.5);
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0px;
+  left: 0px;
+}
+.modal-content {
+  background: #fff;
+  min-height: 200px;
+  width: 300px;
+  border-radius: 4px;
+  border: 2px solid rgba(0,0,0,0.6);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+}
+.close-modal {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 20px;
+}
+.close-modal:hover {
+  cursor: pointer;
 }

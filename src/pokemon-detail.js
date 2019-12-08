@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
+import Modal from '../src/components/Modal';
 
  function PokemonDetail ({props, match}) { 
 
@@ -69,6 +70,14 @@ import axios from 'axios';
         {/*<button onClick={() => add()}>masuk</button>*/}
       </div>
 
+      {showModal && (
+        <Modal 
+          status="Success"
+          wording="You've caught it. Congrats!"
+          closeModal={()=> setShowModal(false)}
+        />
+        )
+      }
 
 
     </div>
