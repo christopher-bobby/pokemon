@@ -41,6 +41,7 @@ import { PokemonContext } from "./PokemonContext";
     let pokemonName = document.getElementById("pokemon-name").value;
     if(e.keyCode === 13) {
       setNameCollection([...nameCollection, pokemonName])
+      setShowModal(false)
     }
   }
   useEffect(()=>{
@@ -79,7 +80,7 @@ import { PokemonContext } from "./PokemonContext";
         {/*<button onClick={() => add()}>masuk</button>*/}
       </div>
 
-      {showModal && (
+      {showModal && Math.random() > 0.5 && (
         <Modal 
           status="Success"
           wording="You've caught it. Congrats!"
