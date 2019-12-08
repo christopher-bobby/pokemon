@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import '../App.css';
 
 
- function Modal({wording, status, closeModal, onChange}) { 
+ function Modal({wording, status, closeModal, onKeyUp}) { 
   
 
   return (
@@ -19,7 +19,7 @@ import '../App.css';
           {wording}
           <div>
             Please name your new Pokemon!
-            <input type="text" id="pokemon-name" onChange={onChange}/>
+            <input type="text" id="pokemon-name" onKeyUp={onKeyUp}/>
           </div>
         </div>
       </div>

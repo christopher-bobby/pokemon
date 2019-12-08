@@ -4,10 +4,12 @@ import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
 import Modal from '../src/components/Modal';
+import { PokemonContext } from "./PokemonContext";
 
  function PokemonDetail ({props, match}) { 
 
-
+  const {idCollection, setIdCollection} = useContext(PokemonContext);
+  const {nameCollection, setNameCollection} = useContext(PokemonContext);
   const id = match.params.id;
   const [name, setName] = useState();
   const [frontImage, setFrontImage] = useState();
@@ -33,6 +35,13 @@ import Modal from '../src/components/Modal';
   }
   const add = () =>{
     setShowModal(true);
+    setIdCollection([...idCollection, id])
+  }
+  const submitPokemonName = (e) => {
+    let pokemonName = document.getElementById("pokemon-name").value;
+    if(e.keyCode === 13) {
+      setNameCollection([...nameCollection, pokemonName])
+    }
   }
   useEffect(()=>{
     getData(id);
@@ -75,6 +84,7 @@ import Modal from '../src/components/Modal';
           status="Success"
           wording="You've caught it. Congrats!"
           closeModal={()=> setShowModal(false)}
+          onKeyUp={(e) => submitPokemonName(e)}
         />
         )
       }
