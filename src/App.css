@@ -172,6 +172,9 @@ body {
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
 }
+/* ========================================== 
+ Components
+============================================*/
 
 /* Modal Popup
 -------------------------------------*/
@@ -225,6 +228,17 @@ body {
 }
 .form-control:active, .form-control:hover, .form-control:focus {
   outline: none;
+}
+
+/* Empty Component
+-------------------------------------*/
+.empty-component {
+  text-align: center;
+}
+.sad-face {
+  width: 200px;
+  display: block;
+  margin: auto;
 }
 
 
