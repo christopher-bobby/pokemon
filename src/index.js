@@ -11,7 +11,7 @@ import './index.css';
 
 function AppRouter() {
 	const [idCollection, setIdCollection] = useState([]);
-	const [nameCollection, setNameCollection] = useState(["poke"]);
+	const [nameCollection, setNameCollection] = useState([]);
 	return (
 		<Router>
 			<div className="container">

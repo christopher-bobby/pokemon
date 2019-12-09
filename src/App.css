@@ -1,6 +1,144 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ========================================== 
+ Layout
+============================================*/
+.container {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ========================================== 
+ Navbar
+============================================*/
+.navbar-logo {
+  width: 300px;
+  display: block;
+  margin: auto;
+}
+.navbar ul {
+  list-style-type: none;
+  padding-left: 0px;
+}
+.navbar ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+/* ========================================== 
+ Pokemon List
+============================================*/
+.pokemon-list-container {
+  padding: 20px 10px 10px;
+  border: 2px solid rgb(3,172,14);
+  border-radius: 8px;
+}
+.pokemon-list {
+  padding: 10px;
+  border: 2px solid rgb(3,172,14);
+  border-radius: 8px;
+  display: inline-block;
+  margin: 0px 10px 10px;
+  text-decoration: none;
+  color: #2d2b2c;
+}
+.pokemon-list:hover {
+  background: rgb(3,172,14);
+  color: #fff;
+}
 
 
 
+
+
+/* ========================================== 
+ Pokemon Detail
+============================================*/
+
+@-webkit-keyframes arrow_move {
+  0% {
+    opacity: 1;
+    top: -48px; }
+  50% {
+    opacity: 0;
+    top: -24px; }
+  90% {
+    opacity: 0;
+    top: -48px; }
+  100% {
+    opacity: 1;
+    top: -48px; } 
+}
+@keyframes arrow_move {
+  0% {
+    opacity: 1;
+    top: -48px; }
+  50% {
+    opacity: 0;
+    top: -24px; }
+  90% {
+    opacity: 0;
+    top: -48px; }
+  100% {
+    opacity: 1;
+    top: -48px; } 
+}
+
+.btn-catch {
+  width: 200px;
+}
+
+.catch-me {
+  position: relative;
+  margin-top: 80px;
+}
+.catch-me img {
+  width: 80px;
+}
+.catch-me img:hover {
+  transform: rotate(30deg);
+  cursor: pointer;
+}
+
+.catch-me .label {
+  position: absolute;
+  top: -50px;
+  display: inline-block;
+  -webkit-animation: arrow_move 1s linear;
+  animation: arrow_move 1s linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
 
 /* Modal Popup
 -------------------------------------*/
@@ -36,3 +174,9 @@
 .close-modal:hover {
   cursor: pointer;
 }
+
+
+
+
+
+

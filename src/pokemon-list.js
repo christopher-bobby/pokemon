@@ -17,12 +17,12 @@ import axios from 'axios';
     getData();
   }, [])
   return (
-    <div className="pokemon-list">
+    <div className="pokemon-list-container">
 
       {
         pokemonList.length !== 0 && pokemonList.map((pokemon, index) =>{
           return (
-            <div><NavLink to={`/pokemon-detail/${index+1}`}>{pokemon.name}</NavLink></div>
+          <NavLink to={`/pokemon-detail/${index+1}`} className="pokemon-list">{pokemon.name}</NavLink>
           )
         })
       }
