@@ -17,7 +17,9 @@ import { PokemonContext } from "./PokemonContext";
   const [types, setTypes] = useState([]);
   const [moves, setMoves] = useState([]);
   const [showModal, setShowModal] = useState(false);
+  const [mathRandom, setMathRandom] = useState();
   let bodyDOM = document.getElementsByTagName("body")[0];
+
  // const [counter, setCounter] = useState(store.getState());
   const getData = (id) => {
     axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`).then(response => {
@@ -35,6 +37,7 @@ import { PokemonContext } from "./PokemonContext";
   }
   const add = () =>{
     setShowModal(true);
+    setMathRandom(Math.random() > 0.5);
     setIdCollection([...idCollection, id])
   }
   const submitPokemonName = (e) => {
@@ -46,13 +49,12 @@ import { PokemonContext } from "./PokemonContext";
   }
   useEffect(()=>{
     getData(id);
-    showModal ? bodyDOM.classList = "scroll-locked" : bodyDOM.classList = ""
+    showModal && mathRandom ? bodyDOM.classList = "scroll-locked" : bodyDOM.classList = ""
 
   }, [showModal])
 
   return (
     <div className="pokemon-detail">
-      <div className="container">
 
         <Link to="/pokemon-list"> Back to Pokemon List</Link>
       
@@ -78,13 +80,12 @@ import { PokemonContext } from "./PokemonContext";
           <img src="/pokemon-ball.png" className="btn-catch" onClick={() => add()} />
         </div>
         {/*<button onClick={() => add()}>masuk</button>*/}
-      </div>
 
-      {showModal && Math.random() > 0.5 && (
+      {showModal  && (
         <Modal 
           status="Success"
           wording="You've caught it. Congrats!"
-          closeModal={()=> setShowModal(false)}
+          closeModal={()=> setShowModal(false) }
           onKeyUp={(e) => submitPokemonName(e)}
         />
         )

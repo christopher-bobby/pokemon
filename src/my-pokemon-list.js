@@ -13,18 +13,18 @@ function MyPokemonList (props) {
   useEffect(() => {
   }, []);
   return (
-    <div className="pokemon-list">
+    <div className="pokemon-list-container">
       My Pokemon List
         <h2>
           {nameCollection.map((name, index) => {
-            return (<Fragment>{name}</Fragment>)
+            return (<div className="my-pokemon-list">{name}</div>)
           })}
         </h2>
-        <h2>
+       {/* <h2>
           {idCollection.map((id, index) => {
             return (<Fragment>{id}</Fragment>)
           })}
-        </h2>
+        </h2> */}
       
     </div>
   );

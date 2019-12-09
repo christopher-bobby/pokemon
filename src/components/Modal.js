@@ -19,7 +19,7 @@ import '../App.css';
           {wording}
           <div>
             Please name your new Pokemon!
-            <input type="text" id="pokemon-name" onKeyUp={onKeyUp}/>
+            <input type="text" id="pokemon-name" className="form-control" onKeyUp={onKeyUp}/>
           </div>
         </div>
       </div>
