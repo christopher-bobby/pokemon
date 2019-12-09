@@ -25,7 +25,6 @@ import { PokemonContext } from "./PokemonContext";
     axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`).then(response => {
         if(response.data) {
           const data = response.data
-          console.log("res", response.data)
           setName(data.name)
           setFrontImage(data.sprites.front_default)
           setBackImage(data.sprites.back_default)
@@ -37,8 +36,10 @@ import { PokemonContext } from "./PokemonContext";
   }
   const add = () =>{
     setShowModal(true);
-    setMathRandom(Math.random() > 0.5);
-    setIdCollection([...idCollection, id])
+    if(Math.random() > 0.5) {
+      console.log("masuk", Math.random());
+      setIdCollection([...idCollection, id])
+    }
   }
   const submitPokemonName = (e) => {
     let pokemonName = document.getElementById("pokemon-name").value;
@@ -54,7 +55,7 @@ import { PokemonContext } from "./PokemonContext";
   }, [showModal])
 
   return (
-    <div className="pokemon-detail">
+    <div className="container pokemon-detail">
 
         <Link to="/pokemon-list"> Back to Pokemon List</Link>
       

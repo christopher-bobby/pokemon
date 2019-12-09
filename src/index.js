@@ -14,22 +14,22 @@ function AppRouter() {
 	const [nameCollection, setNameCollection] = useState([]);
 	return (
 		<Router>
-			<div className="container">
-				<div className="navbar">
+			<div className="navbar">
+				<div className="container">
 					<img src="/pokemon_logo.png" className="navbar-logo" alt="Pokemon ball" />
 					<ul>
-						<li><NavLink to="/pokemon-list">Pokemon List</NavLink></li>
-						<li><NavLink to="/my-pokemon-list">My Pokemon List</NavLink></li>
+						<li><NavLink to="/pokemon-list" className="nav-link">Pokemon List</NavLink></li>
+						<li><NavLink to="/my-pokemon-list" className="nav-link">My Pokemon List</NavLink></li>
 					</ul>
 				</div>
-				<PokemonContext.Provider value={{idCollection, setIdCollection, nameCollection, setNameCollection}} >
-					<Switch>
-						<Route path="/pokemon-list" component={PokemonList} />
-						<Route path="/pokemon-detail/:id" component={PokemonDetail} />
-						<Route path="/my-pokemon-list" component={MyPokemonList} />
-					</Switch>
-				</PokemonContext.Provider>
 			</div>
+			<PokemonContext.Provider value={{idCollection, setIdCollection, nameCollection, setNameCollection}}>
+				<Switch>
+					<Route path="/pokemon-list" component={PokemonList} />
+					<Route path="/pokemon-detail/:id" component={PokemonDetail} />
+					<Route path="/my-pokemon-list" component={MyPokemonList} />
+				</Switch>
+			</PokemonContext.Provider>
 			<Redirect exact from="/" to="/pokemon-list" />
 		</Router>
 	)

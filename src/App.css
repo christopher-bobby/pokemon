@@ -44,18 +44,40 @@ body {
 /* ========================================== 
  Navbar
 ============================================*/
+.navbar {
+  background: #F3F4F5;
+  padding-top: 20px;
+}
 .navbar-logo {
-  width: 300px;
+  width: 120px;
   display: block;
   margin: auto;
+  margin-bottom: 30px;
 }
 .navbar ul {
   list-style-type: none;
   padding-left: 0px;
+  text-align: center;
 }
 .navbar ul li {
   display: inline-block;
   margin-right: 20px;
+  padding-bottom: 10px;
+}
+.nav-link {
+  color: rgba(0,0,0,0.7);
+  text-decoration: none;
+}
+.nav-link:hover {
+  color: #42b549;
+}
+@media (min-width: 768px) {
+  .navbar-logo {
+    width: 180px;
+  }
+  .navbar ul {
+    text-align: left;
+  }
 }
 
 /* ========================================== 

@@ -13,27 +13,20 @@ function MyPokemonList (props) {
   const removePokemonList = (idx) => {
     nameCollection.splice(idx, 1);
     setNameCollection([...nameCollection])
-    console.log("masuk bangke", idx, nameCollection)
   }
 
 
   useEffect(() => {
   }, []);
   return (
-    <div className="pokemon-list-container">
+    <div className="container pokemon-list-container">
       My Pokemon List
-        <h2>
-          {nameCollection.map((name, index) => {
-            return (<div className="pokemon-list">{name} 
-              <img src="./remove-ic.png" className="remove-ic" onClick={()=> removePokemonList(index)}/> </div>)
-          })}
-        </h2>
-       {/* <h2>
-          {idCollection.map((id, index) => {
-            return (<Fragment>{id}</Fragment>)
-          })}
-        </h2> */}
-      
+      <div>
+      {nameCollection.map((name, index) => {
+        return (<div className="pokemon-list">{name} 
+          <img src="./remove-ic.png" className="remove-ic" onClick={()=> removePokemonList(index)}/> </div>)
+      })}
+      </div>
     </div>
   );
 }

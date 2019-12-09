@@ -17,8 +17,7 @@ import axios from 'axios';
     getData();
   }, [])
   return (
-    <div className="pokemon-list-container">
-
+    <div className="container pokemon-list-container">
       {
         pokemonList.length !== 0 && pokemonList.map((pokemon, index) =>{
           return (
