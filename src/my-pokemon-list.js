@@ -10,6 +10,13 @@ function MyPokemonList (props) {
   const {idCollection, setIdCollection} = useContext(PokemonContext);
   const {nameCollection, setNameCollection} = useContext(PokemonContext);
 
+  const removePokemonList = (idx) => {
+    nameCollection.splice(idx, 1);
+    setNameCollection([...nameCollection])
+    console.log("masuk bangke", idx, nameCollection)
+  }
+
+
   useEffect(() => {
   }, []);
   return (
@@ -17,7 +24,8 @@ function MyPokemonList (props) {
       My Pokemon List
         <h2>
           {nameCollection.map((name, index) => {
-            return (<div className="my-pokemon-list">{name}</div>)
+            return (<div className="pokemon-list">{name} 
+              <img src="./remove-ic.png" className="remove-ic" onClick={()=> removePokemonList(index)}/> </div>)
           })}
         </h2>
        {/* <h2>
