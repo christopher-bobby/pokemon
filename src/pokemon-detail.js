@@ -82,21 +82,15 @@ import { PokemonContext } from "./PokemonContext";
         </div>
         {/*<button onClick={() => add()}>masuk</button>*/}
 
-      {showModal ? Math.random() > 0.5 ? 
+      {showModal &&
 
         (<Modal 
-          status="Success"
-          wording="You've caught it. Congrats!"
+          status={Math.random() > 0.5 ? "Success" : "Failed"}
+          wording={Math.random() > 0.5 ? "You've caught it. Congrats!" : "Fret not! Keep catching!"}
           closeModal={()=> setShowModal(false) }
           onKeyUp={(e) => submitPokemonName(e)}
         />)
-         :   
-         (<Modal 
-          status="Failed"
-          wording="Fret not! Keep catching!"
-          closeModal={()=> setShowModal(false) }
-
-        />) : null
+  
       }
 
 
