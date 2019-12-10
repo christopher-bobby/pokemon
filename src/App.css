@@ -213,8 +213,8 @@ html, body {
   margin-top: 12px;
 }
 .form-control {
-  display: block;
-  width: 100%;
+  width: -webkit-fill-available;
+  width: fill-available;
   padding: .25rem;
   font-size: 1rem;
   font-weight: 400;
