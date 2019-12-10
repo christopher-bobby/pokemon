@@ -36,10 +36,8 @@ import { PokemonContext } from "./PokemonContext";
   }
   const add = () =>{
     setShowModal(true);
-    if(Math.random() > 0.5) {
-      console.log("masuk", Math.random());
-      setIdCollection([...idCollection, id])
-    }
+    setMathRandom(Math.random());
+    setIdCollection([...idCollection, id])
   }
   const submitPokemonName = (e) => {
     let pokemonName = document.getElementById("pokemon-name").value;
@@ -83,14 +81,12 @@ import { PokemonContext } from "./PokemonContext";
         {/*<button onClick={() => add()}>masuk</button>*/}
 
       {showModal &&
-
         (<Modal 
-          status={Math.random() > 0.5 ? "Success" : "Failed"}
-          wording={Math.random() > 0.5 ? "You've caught it. Congrats!" : "Fret not! Keep catching!"}
+          status={mathRandom > 0.5 ? "Success" : "Failed"}
+          wording={mathRandom > 0.5 ? "You've caught it. Congrats!" : "Fret not! Keep catching!"}
           closeModal={()=> setShowModal(false) }
           onKeyUp={(e) => submitPokemonName(e)}
         />)
-  
       }
 
 
