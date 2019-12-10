@@ -8,7 +8,7 @@ import '../App.css';
 
   return (
     <div className="modal">
-      <div className="overlay-modal">
+      <div className="overlay-modal" onClick={closeModal}>
       </div>
       <div className="modal-content">
         <div className="header">
@@ -17,10 +17,11 @@ import '../App.css';
         </div>
         <div className="modal-body">
           {wording}
-          <div>
+          {status === "Success" &&
+           (<div>
             Please name your new Pokemon!
             <input type="text" id="pokemon-name" className="form-control" onKeyUp={onKeyUp}/>
-          </div>
+          </div>)}
         </div>
       </div>
     </div>

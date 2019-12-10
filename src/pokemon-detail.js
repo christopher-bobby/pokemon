@@ -50,14 +50,14 @@ import { PokemonContext } from "./PokemonContext";
   }
   useEffect(()=>{
     getData(id);
-    showModal && mathRandom ? bodyDOM.classList = "scroll-locked" : bodyDOM.classList = ""
+    showModal ? bodyDOM.classList = "scroll-locked" : bodyDOM.classList = ""
 
   }, [showModal])
 
   return (
     <div className="container pokemon-detail">
 
-        <Link to="/pokemon-list"> Back to Pokemon List</Link>
+        <Link to="/pokemon-list" className="back-link"> <img src="/chevron-right.jpg" alt="back" className="chevron-right" />Back to Pokemon List</Link>
       
         <h3>{name}</h3>
         <img src={frontImage}
@@ -82,14 +82,21 @@ import { PokemonContext } from "./PokemonContext";
         </div>
         {/*<button onClick={() => add()}>masuk</button>*/}
 
-      {showModal  && (
-        <Modal 
+      {showModal ? Math.random() > 0.5 ? 
+
+        (<Modal 
           status="Success"
           wording="You've caught it. Congrats!"
           closeModal={()=> setShowModal(false) }
           onKeyUp={(e) => submitPokemonName(e)}
-        />
-        )
+        />)
+         :   
+         (<Modal 
+          status="Failed"
+          wording="Fret not! Keep catching!"
+          closeModal={()=> setShowModal(false) }
+
+        />) : null
       }
 
 

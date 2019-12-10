@@ -5,7 +5,6 @@ import PokemonList from './pokemon-list';
 import PokemonDetail from './pokemon-detail';
 import MyPokemonList from './my-pokemon-list';
 import { PokemonContext }  from './PokemonContext';
-import './index.css';
 import './App.css';
 
 
