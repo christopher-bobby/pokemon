@@ -47,7 +47,9 @@ import { useMetrics } from "./PokemonContext";
     if(e.keyCode === 13) {
       setNameCollection([...nameCollection, pokemonName])
       setShowModal(false)
-      setPokemonNameCaught([...pokemonNameCaught, name])
+      if(pokemonNameCaught.includes(name) === false) {
+        setPokemonNameCaught([...pokemonNameCaught, name])
+      }
     }
   }
   useEffect(()=>{

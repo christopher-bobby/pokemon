@@ -23,7 +23,7 @@ import { useMetrics } from "./PokemonContext";
   return (
     <div className="container pokemon-list-container">
       <div className="owned-total">
-        Owned Total: {ownedTotal}
+        Owned Total: {pokemonNameCaught.length}
         {console.log("caught", pokemonNameCaught)}
       </div>
       {
