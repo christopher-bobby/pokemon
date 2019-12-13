@@ -4,14 +4,15 @@ import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
 import Modal from '../src/components/Modal';
-import { PokemonContext } from "./PokemonContext";
+import { PokemonProvider } from "./PokemonContext";
+import { useMetrics } from "./PokemonContext";
 
  function PokemonDetail ({props, match}) { 
 
-  const {idCollection, setIdCollection} = useContext(PokemonContext);
-  const {nameCollection, setNameCollection} = useContext(PokemonContext);
-  const {ownedTotal, setOwnedTotal} = useContext(PokemonContext);
-  const {pokemonNameCaught, setPokemonNameCaught} = useContext(PokemonContext);
+  const {idCollection, setIdCollection} = useMetrics();
+  const {nameCollection, setNameCollection} = useMetrics();
+  const {ownedTotal, setOwnedTotal} = useMetrics();
+  const {pokemonNameCaught, setPokemonNameCaught} = useMetrics();
   const id = match.params.id;
   const [name, setName] = useState();
   const [frontImage, setFrontImage] = useState();

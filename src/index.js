@@ -4,16 +4,13 @@ import {Route, Redirect, Link, NavLink, BrowserRouter as Router, Switch } from '
 import PokemonList from './pokemon-list';
 import PokemonDetail from './pokemon-detail';
 import MyPokemonList from './my-pokemon-list';
-import { PokemonContext }  from './PokemonContext';
+import { PokemonProvider }  from './PokemonContext';
 import './App.css';
 
 
 
 function AppRouter() {
-	const [idCollection, setIdCollection] = useState([]);
-	const [nameCollection, setNameCollection] = useState([]);
-	const [ownedTotal, setOwnedTotal] = useState(0);
-	const [pokemonNameCaught, setPokemonNameCaught] = useState([]);
+	
 	return (
 		<Router>
 			<div className="navbar">
@@ -25,14 +22,13 @@ function AppRouter() {
 					</ul>
 				</div>
 			</div>
-			<PokemonContext.Provider value={{idCollection, setIdCollection, nameCollection, setNameCollection,
-			 ownedTotal, setOwnedTotal, pokemonNameCaught, setPokemonNameCaught}}>
+			<PokemonProvider>
 				<Switch>
 					<Route path="/pokemon-list" component={PokemonList} />
 					<Route path="/pokemon-detail/:id" component={PokemonDetail} />
 					<Route path="/my-pokemon-list" component={MyPokemonList} />
 				</Switch>
-			</PokemonContext.Provider>
+			</PokemonProvider>
 			<Redirect exact from="/" to="/pokemon-list" />
 		</Router>
 	)

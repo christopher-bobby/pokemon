@@ -4,12 +4,12 @@ import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
 import EmptyComponent from '../src/components/EmptyComponent';
-import { PokemonContext } from "./PokemonContext";
-
+import { PokemonProvider } from "./PokemonContext";
+import { useMetrics } from "./PokemonContext";
 
 function MyPokemonList (props) {  
-  const {idCollection, setIdCollection} = useContext(PokemonContext);
-  const {nameCollection, setNameCollection} = useContext(PokemonContext);
+  const {idCollection, setIdCollection} = useMetrics();
+  const {nameCollection, setNameCollection} = useMetrics();
 
   const removePokemonList = (idx) => {
     nameCollection.splice(idx, 1);

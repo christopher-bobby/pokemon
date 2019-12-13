@@ -4,11 +4,12 @@ import { Link, NavLink } from "react-router-dom";
 import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
-import { PokemonContext } from "./PokemonContext";
+import { PokemonProvider } from "./PokemonContext";
+import { useMetrics } from "./PokemonContext";
 
  function PokemonList () {  
-  const {ownedTotal, setOwnedTotal} = useContext(PokemonContext);
-  const {pokemonNameCaught, setPokemonNameCaught} = useContext(PokemonContext);
+  const {ownedTotal, setOwnedTotal} = useMetrics();
+  const {pokemonNameCaught, setPokemonNameCaught} = useMetrics();
   const [pokemonList, setPokemonList] = useState([]);
 
   const getData = () => {
