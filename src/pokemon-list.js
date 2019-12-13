@@ -1,15 +1,18 @@
-import React, { Component, useEffect, useState } from 'react';
+import React, { Component, useEffect, useState, useContext } from 'react';
 import { Link, NavLink } from "react-router-dom";
 
 import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
+import { PokemonContext } from "./PokemonContext";
 
  function PokemonList () {  
+  const {ownedTotal, setOwnedTotal} = useContext(PokemonContext);
+  const {pokemonNameCaught, setPokemonNameCaught} = useContext(PokemonContext);
   const [pokemonList, setPokemonList] = useState([]);
+
   const getData = () => {
     axios.get('https://pokeapi.co/api/v2/pokemon/').then((response) =>
-      //console.log("res", response.data);
       setPokemonList(response.data.results)
     )
   }
@@ -18,6 +21,10 @@ import axios from 'axios';
   }, [])
   return (
     <div className="container pokemon-list-container">
+      <div className="owned-total">
+        Owned Total: {ownedTotal}
+        {console.log("caught", pokemonNameCaught)}
+      </div>
       {
         pokemonList.length !== 0 && pokemonList.map((pokemon, index) =>{
           return (

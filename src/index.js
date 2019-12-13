@@ -12,6 +12,8 @@ import './App.css';
 function AppRouter() {
 	const [idCollection, setIdCollection] = useState([]);
 	const [nameCollection, setNameCollection] = useState([]);
+	const [ownedTotal, setOwnedTotal] = useState(0);
+	const [pokemonNameCaught, setPokemonNameCaught] = useState([]);
 	return (
 		<Router>
 			<div className="navbar">
@@ -23,7 +25,8 @@ function AppRouter() {
 					</ul>
 				</div>
 			</div>
-			<PokemonContext.Provider value={{idCollection, setIdCollection, nameCollection, setNameCollection}}>
+			<PokemonContext.Provider value={{idCollection, setIdCollection, nameCollection, setNameCollection,
+			 ownedTotal, setOwnedTotal, pokemonNameCaught, setPokemonNameCaught}}>
 				<Switch>
 					<Route path="/pokemon-list" component={PokemonList} />
 					<Route path="/pokemon-detail/:id" component={PokemonDetail} />

@@ -10,6 +10,8 @@ import { PokemonContext } from "./PokemonContext";
 
   const {idCollection, setIdCollection} = useContext(PokemonContext);
   const {nameCollection, setNameCollection} = useContext(PokemonContext);
+  const {ownedTotal, setOwnedTotal} = useContext(PokemonContext);
+  const {pokemonNameCaught, setPokemonNameCaught} = useContext(PokemonContext);
   const id = match.params.id;
   const [name, setName] = useState();
   const [frontImage, setFrontImage] = useState();
@@ -32,7 +34,7 @@ import { PokemonContext } from "./PokemonContext";
           setMoves(data.moves)
         }
       }
-    )
+    ) 
   }
   const add = () =>{
     setShowModal(true);
@@ -44,6 +46,7 @@ import { PokemonContext } from "./PokemonContext";
     if(e.keyCode === 13) {
       setNameCollection([...nameCollection, pokemonName])
       setShowModal(false)
+      setPokemonNameCaught([...pokemonNameCaught, name])
     }
   }
   useEffect(()=>{
