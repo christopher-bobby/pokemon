@@ -11,7 +11,6 @@ import { useMetrics } from "./PokemonContext";
 
   const {idCollection, setIdCollection} = useMetrics();
   const {nameCollection, setNameCollection} = useMetrics();
-  const {ownedTotal, setOwnedTotal} = useMetrics();
   const {pokemonNameCaught, setPokemonNameCaught} = useMetrics();
   const id = match.params.id;
   const [name, setName] = useState();

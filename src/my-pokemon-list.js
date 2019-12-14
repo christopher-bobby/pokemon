@@ -10,6 +10,7 @@ import { useMetrics } from "./PokemonContext";
 function MyPokemonList (props) {  
   const {idCollection, setIdCollection} = useMetrics();
   const {nameCollection, setNameCollection} = useMetrics();
+  const {pokemonNameCaught, setPokemonNameCaught} = useMetrics();
 
   const removePokemonList = (idx) => {
     nameCollection.splice(idx, 1);
@@ -21,6 +22,8 @@ function MyPokemonList (props) {
   }, []);
   return (
     <div className="container pokemon-list-container">
+      <div className="owned-total">Owned Total: {pokemonNameCaught.length}</div>
+
       <div>
       {nameCollection.length === 0 ? <EmptyComponent wording="You don't have a Pokemon yet! Catch one!"/> : 
         nameCollection.map((name, index) => {

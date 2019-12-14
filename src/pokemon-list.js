@@ -8,7 +8,6 @@ import { PokemonProvider } from "./PokemonContext";
 import { useMetrics } from "./PokemonContext";
 
  function PokemonList () {  
-  const {ownedTotal, setOwnedTotal} = useMetrics();
   const {pokemonNameCaught, setPokemonNameCaught} = useMetrics();
   const [pokemonList, setPokemonList] = useState([]);
 
@@ -24,7 +23,6 @@ import { useMetrics } from "./PokemonContext";
     <div className="container pokemon-list-container">
       <div className="owned-total">
         Owned Total: {pokemonNameCaught.length}
-        {console.log("caught", pokemonNameCaught)}
       </div>
       {
         pokemonList.length !== 0 && pokemonList.map((pokemon, index) =>{
