@@ -3,17 +3,19 @@ import { Link } from "react-router-dom";
 import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
-import Modal from '../src/components/Modal';
+import ModalGet from '../src/components/ModalGet';
 import ModalError from '../src/components/ModalError';
 import { PokemonProvider } from "./PokemonContext";
 import { useMetrics } from "./PokemonContext";
 
  function PokemonDetail ({props, match}) { 
-
+  //get context value
   const {idCollection, setIdCollection} = useMetrics();
   const {nameCollection, setNameCollection} = useMetrics();
   const {pokemonNameCaught, setPokemonNameCaught} = useMetrics();
   const id = match.params.id;
+
+  // set initial state
   const [name, setName] = useState();
   const [frontImage, setFrontImage] = useState();
   const [backImage, setBackImage] = useState();
@@ -24,7 +26,6 @@ import { useMetrics } from "./PokemonContext";
   const [generalError, setGeneralError] = useState(false);
   let bodyDOM = document.getElementsByTagName("body")[0];
 
- // const [counter, setCounter] = useState(store.getState());
   const getData = (id) => {
     axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`).then(response => {
         if(response.data) {
@@ -44,7 +45,7 @@ import { useMetrics } from "./PokemonContext";
   }
   const add = () =>{
     setShowModal(true);
-    setMathRandom(Math.random());
+    setMathRandom(Math.random()); // set math random for possibilities being caught 
     setIdCollection([...idCollection, id])
   }
   const submitPokemonName = (e) => {
@@ -59,7 +60,7 @@ import { useMetrics } from "./PokemonContext";
   }
   useEffect(()=>{
     getData(id);
-    showModal ? bodyDOM.classList = "scroll-locked" : bodyDOM.classList = ""
+    showModal ? bodyDOM.classList = "scroll-locked" : bodyDOM.classList = "" // add scroll locked so scroll bar deactivates 
 
   }, [showModal])
 
@@ -89,10 +90,9 @@ import { useMetrics } from "./PokemonContext";
           <span className="label animated fadeInDown">Catch me</span>
           <img src="/pokemon-ball.png" className="btn-catch" onClick={() => add()} />
         </div>
-        {/*<button onClick={() => add()}>masuk</button>*/}
 
       {showModal &&
-        (<Modal 
+        (<ModalGet
           status={mathRandom > 0.5 ? "Success" : "Failed"}
           wording={mathRandom > 0.5 ? "You've caught it. Congrats!" : "Fret not! Keep catching!"}
           closeModal={()=> setShowModal(false) }

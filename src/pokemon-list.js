@@ -10,7 +10,10 @@ import { PokemonProvider } from "./PokemonContext";
 import { useMetrics } from "./PokemonContext";
 
  function PokemonList () {  
+  //get context value
   const {pokemonNameCaught, setPokemonNameCaught} = useMetrics();
+
+  //set initial state
   const [pokemonList, setPokemonList] = useState([]);
   const [generalError, setGeneralError] = useState(false);
 

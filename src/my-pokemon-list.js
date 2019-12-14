@@ -8,6 +8,7 @@ import { PokemonProvider } from "./PokemonContext";
 import { useMetrics } from "./PokemonContext";
 
 function MyPokemonList (props) {  
+  //get context value
   const {idCollection, setIdCollection} = useMetrics();
   const {nameCollection, setNameCollection} = useMetrics();
   const {pokemonNameCaught, setPokemonNameCaught} = useMetrics();
@@ -17,9 +18,6 @@ function MyPokemonList (props) {
     setNameCollection([...nameCollection])
   }
 
-
-  useEffect(() => {
-  }, []);
   return (
     <div className="container pokemon-list-container">
       <div className="owned-total">Owned Total: {pokemonNameCaught.length}</div>

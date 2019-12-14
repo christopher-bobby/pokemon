@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import '../App.css';
 
 
- function Modal({wording, status, closeModal, onKeyUp}) { 
+ function ModalGet({wording, status, closeModal, onKeyUp}) { 
   
 
   return (
@@ -31,4 +31,4 @@ import '../App.css';
 }
 
 
-export default Modal;
+export default ModalGet;
