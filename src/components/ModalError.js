@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import '../App.css';
 
 
- function ModalError() { 
+ function ModalError(closeModal) { 
   
 
   return (
@@ -17,7 +17,6 @@ import '../App.css';
         </div>
         <div className="modal-body">
           There is an error on our side. We're on it!
-         
         </div>
       </div>
     </div>

@@ -4,6 +4,7 @@ import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
 import Modal from '../src/components/Modal';
+import ModalError from '../src/components/ModalError';
 import { PokemonProvider } from "./PokemonContext";
 import { useMetrics } from "./PokemonContext";
 
@@ -20,6 +21,7 @@ import { useMetrics } from "./PokemonContext";
   const [moves, setMoves] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [mathRandom, setMathRandom] = useState();
+  const [generalError, setGeneralError] = useState(false);
   let bodyDOM = document.getElementsByTagName("body")[0];
 
  // const [counter, setCounter] = useState(store.getState());
@@ -34,7 +36,11 @@ import { useMetrics } from "./PokemonContext";
           setMoves(data.moves)
         }
       }
-    ) 
+    ).catch(error => {
+        setGeneralError(true)
+        setTimeout(()=>{ setGeneralError(false) }, 3000); // to close error modal automatically
+
+    })
   }
   const add = () =>{
     setShowModal(true);
@@ -93,6 +99,9 @@ import { useMetrics } from "./PokemonContext";
           onKeyUp={(e) => submitPokemonName(e)}
         />)
       }
+      {generalError && (
+        <ModalError />
+      )}
 
 
     </div>
