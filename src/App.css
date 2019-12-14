@@ -95,6 +95,10 @@ body  {
 .remove-ic:hover {
   cursor: pointer;
 }
+.owned-total {
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
 
 
 /* ========================================== 
