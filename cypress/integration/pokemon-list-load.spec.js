@@ -1,7 +1,8 @@
 describe('Initial page loads', () => {
-
+	beforeEach(()=> {
+		cy.visit('http://localhost:3000');
+	})
 	it('focuses input when success', () => {
-		cy.visit('http://localhost:3000/pokemon-list');
 		.should('have.class', 'pokemon-list')
 	})
 })
