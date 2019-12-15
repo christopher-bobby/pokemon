@@ -2,7 +2,7 @@ import React, { Component, useEffect, useState, useContext } from 'react';
 import { Link, NavLink } from "react-router-dom";
 import axios from 'axios';
 import ModalError from '../src/components/ModalError';
-
+import Loading from '../src/components/Loading';
 import { PokemonProvider } from "./PokemonContext";
 import { useMetrics } from "./PokemonContext";
 
@@ -32,11 +32,11 @@ import { useMetrics } from "./PokemonContext";
         Owned Total: {pokemonNameCaught.length}
       </div>
       {
-        pokemonList.length !== 0 && pokemonList.map((pokemon, index) =>{
+        pokemonList.length === 0 ? (<Loading />) : pokemonList.map((pokemon, index) =>{
           return (
           <NavLink to={`/pokemon-detail/${index+1}`} className="pokemon-list">{pokemon.name}</NavLink>
           )
-        })
+        }) 
       }
       {generalError && (
         <ModalError />

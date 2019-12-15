@@ -1,8 +1,7 @@
-import React, { Component, useEffect, useState, Fragment } from 'react';
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
 
 
- function ModalError(closeModal) { 
+function ModalError(closeModal) { 
   
 
   return (

@@ -1,5 +1,4 @@
-import React, { Component, useEffect, useState, Fragment } from 'react';
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
 
 
  function ModalGet({wording, status, closeModal, onKeyUp}) { 
