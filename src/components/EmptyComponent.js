@@ -1,6 +1,5 @@
 import React, { Component, useEffect, useState, Fragment } from 'react';
 import { Link } from "react-router-dom";
-import '../App.css';
 
 
  function EmptyComponent({wording}) { 

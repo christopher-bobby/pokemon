@@ -1,8 +1,5 @@
 import React, { Component, useEffect, useState, useContext } from 'react';
 import { Link, NavLink } from "react-router-dom";
-
-import logo from './logo.svg';
-import './App.css';
 import axios from 'axios';
 import ModalError from '../src/components/ModalError';
 

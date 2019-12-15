@@ -1,7 +1,5 @@
 import React, { Component, useEffect, useState, useContext, Fragment } from 'react';
 import { Link } from "react-router-dom";
-import logo from './logo.svg';
-import './App.css';
 import axios from 'axios';
 import EmptyComponent from '../src/components/EmptyComponent';
 import { PokemonProvider } from "./PokemonContext";
