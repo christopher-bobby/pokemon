@@ -23,7 +23,8 @@ function MyPokemonList (props) {
       <div className="owned-total">Owned Total: {pokemonNameCaught.length}</div>
 
       <div>
-      {nameCollection.length === 0 ? <EmptyComponent wording="You don't have a Pokemon yet! Catch one!"/> : 
+      {nameCollection.length === 0 ? 
+        <EmptyComponent wording="You don't have a Pokemon yet! Catch one!"/> : 
         nameCollection.map((name, index) => {
         return (<div className="pokemon-list">{name} 
           <img src="./remove-ic.png" className="remove-ic" onClick={()=> removePokemonList(index)}/> </div>)

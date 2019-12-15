@@ -50,7 +50,7 @@ import { useMetrics } from "./PokemonContext";
   }
   const submitPokemonName = (e) => {
     let pokemonName = document.getElementById("pokemon-name").value;
-    if(e.keyCode === 13) {
+    if(e.keyCode === 13) { // submit if user presses ENTER
       setNameCollection([...nameCollection, pokemonName])
       setShowModal(false)
       if(pokemonNameCaught.includes(name) === false) {

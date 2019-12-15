@@ -20,7 +20,7 @@ import '../App.css';
           {status === "Success" &&
            (<div>
             Please name your new Pokemon!
-            <input type="text" id="pokemon-name" className="form-control" onKeyUp={onKeyUp}/>
+            <input type="text" id="pokemon-name" className="form-control focused" onKeyUp={onKeyUp} autoFocus />
           </div>)}
         </div>
       </div>
